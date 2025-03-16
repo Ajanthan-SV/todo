@@ -63,7 +63,18 @@ function Navbar() {
                   <Link className={`nav-link ${location.pathname === '/todo' ? 'active' : ''}`} to="/todo"><b>Todo</b></Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href='/' onClick={handleLogout} style={{cursor:"pointer"}}><b>Logout</b> </a>
+                <a 
+  className="nav-link" 
+  href="/" 
+  onClick={(e) => { 
+    e.preventDefault(); // Prevent default navigation
+    handleLogout(); // Call logout function
+  }} 
+  role="button"
+>
+  <b>Logout</b>
+</a>
+
                 </li>
               </>
               }   
